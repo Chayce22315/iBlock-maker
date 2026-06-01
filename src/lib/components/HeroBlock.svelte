@@ -1,5 +1,5 @@
 <script>
-  export let block;
+  let { block = $bindable() } = $props();
 
   function handleKeydown(e) {
     const speed = 20;
@@ -10,7 +10,7 @@
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <div 
   class="absolute w-24 h-24 bg-blue-500 rounded-xl flex items-center justify-center border-4 border-white shadow-2xl transition-all cursor-move"
